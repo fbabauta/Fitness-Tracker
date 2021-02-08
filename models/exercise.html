@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fitness Tracker</title>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="clearfix">
+            <a class="logo" href="/">Fitness Tracker</a>
+            <a class="nav-item" href="/stats">Dashboard</a>
+            <a class="nav-item" href="/">Home</a>
+        </div>
+    </nav>
+    <div class="wrapper workout">
+        <div class="ui container exercise">
+            <div class="ui card m-auto workout-card">
+                <div class="add-title">
+                    <h2>Add Your Exercise</h2>
+                    <hr style="margin-bottom: 0px;">
+                </div>
+                <form class="workout-form" action="POST">
+                    <div class="workout-type">
+                        <label class="form-label" for="type">Exercise Type</label>
+                        <select name="type" id="type">
+                            <option disabled selected>Select Exercise Type</option>
+                            <option value="resistance">Resistance</option>
+                            <option value="cardio">Cardio</option>
+                        </select>
+                    </div>
+                    <div class="cardio-form d-none">
+                        <div class="cardio-name">
+                            <label class="form-label" for="cardio-name">Name:</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
