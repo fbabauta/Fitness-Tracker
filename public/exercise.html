@@ -40,12 +40,60 @@
                     <div class="cardio-form d-none">
                         <div class="cardio-name">
                             <label class="form-label" for="cardio-name">Name:</label>
+                            <input type="text" name="cardio-name" id="cardio-name" placeholder="Running">
+                        </div>
+                        <div class="distance">
+                            <label class="form-label" for="distance">Distance (m):</label>
+                            <input type="number" name="distance" id="distance" placeholder="5">
+                        </div>
+                        <div class="duration">
+                            <label class="form-label" for="duration">Duration (min):</label>
+                            <input type="number" name="name" id="duration" placeholder="10">
                         </div>
                     </div>
+                    <div class="resistance-form d-none">
+                        <div class="exercise">
+                            <label class="form-label" for="name">Exercise Name:</label>
+                            <input type="text" name="name" id="name" placeholder="Bench Press">
+                        </div>
+                        <div class="weight">
+                            <label class="form-label" for="weight">Weight (lbs):</label>
+                            <input type="number" name="weight" id="weight" placeholder="200">
+                        </div>
+                        <div class="sets">
+                            <label class="form-label" for="sets">Sets:</label>
+                            <input type="number" name="sets" id="sets" placeholder="4">
+                        </div>
+                        <div class="reps">
+                            <label class="form-label" for="reps">Reps:</label>
+                            <input type="number" name="reps" id="reps" placeholder="10">
+                        </div>
+                        <div class="resistance-duration">
+                            <label class="form-label" for="resistance-duration">Duration (min):</label>
+                            <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10">
+                        </div>
+                      </div>  
+                      <div class="buttons">
+                          <button disabled class="huge ui blue button complete exercise-btn purple-btn">
+                              Complete
+                          </button>
+                          <button disabled class="huge ui positive button add-another exercise-btn green-btn">
+                              Add Exercise
+                          </button>
+                      </div>
                 </form>
             </div>
         </div>
     </div>
-    
+    <footer>
+        <div class="footer-text">
+            <a href="https://github.com/fbabauta" target="_blank">@ Francine Babauta</a>
+        </div>
+    </footer>
+    <div id="toast">
+        Workout Added Successfully!
+    </div>
+    <script src="./js/api.js"></script>
+    <script src="./js/exercise.js"></script>
 </body>
 </html>
