@@ -216,9 +216,73 @@ function populateChart(data) {
                 display: false,
                 text: "Exercises Performed"
             },
-
-
+            legend: {
+                itemStyle: {
+                    width: 12
+                },
+                display: true,
+                position: "right",
+                labels: {
+                    fontFamily: "'Roboto', sans-serif",
+                    fontStyle: "lighter"
+                }
+            }
         }
-    })
+    });
+
+    // get duration data
+    function duration(data) {
+        let durations = [];
+
+        data.forEach(workout => {
+            workout.exercises.forEach(exercise => {
+                durations.push(exercise.duration);
+            });
+        });
+
+        return durations;
     }
-    
+
+    // calculate total weight
+    function calculateTotalWeight(data) {
+        let total = [];
+
+        data.forEach(workout => {
+            workout.exercises.forEach(exercise => {
+                if (exercise.type === "resistance") {
+                    total.push(exercise.weight);
+                }
+            });
+        });
+
+        return total;
+    }
+
+    // get workout names
+    function workoutNames(data) {
+        let workouts = [];
+
+        data.forEach(workout => {
+            workout.exercises.forEach(exercise => {
+                workouts.push(exercise.name);
+            });
+        });
+
+        return workouts;
+    }
+
+    // get resistance workout names
+    function resistanceWorkoutNames(data) {
+        let resWorkouts = [];
+
+        data.forEach(workout => {
+            workout.exercises.forEach(exercise => {
+                if (exercise.type === "resistance") {
+                    resWorkouts.push(exercise.name);
+                }
+            });
+        });
+
+        console.log(resWorkouts);
+        return resWorkouts;
+    }
