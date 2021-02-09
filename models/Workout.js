@@ -7,11 +7,6 @@ const WorkoutSchema = new Schema({
         default: Date.now
     },
 
-    totalDuration: {
-        type: Number,
-        default: 0
-    },
-
     exercises: [
         {
             type: {
