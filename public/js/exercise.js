@@ -152,7 +152,7 @@ function clearInputs() {
 
 // event listeners for form and buttons
 if (workoutTypeSelect) {
-    workoutTypeSelect.addEve;ntListener("change", handleWorkoutTypeChange)
+    workoutTypeSelect.addEventListener("change", handleWorkoutTypeChange)
 }
 if (completeButton) {
     completeButton.addEventListener("click", function (event) {
@@ -167,4 +167,4 @@ toast.addEventListener("animationend", handleToastAnimationEnd);
 
 document
     .querySelectorAll("input")
-    .forEacj(element => element.addEventListener("input", validateInputs));
+    .forEach(element => element.addEventListener("input", validateInputs));
