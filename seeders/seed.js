@@ -1,5 +1,6 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+let moment = require("moment");
 
 mongoose.connect("mongodb://localhost/workout", {
     useNewUrlParser: true,
@@ -8,7 +9,8 @@ mongoose.connect("mongodb://localhost/workout", {
 
 let workoutSeed = [
     {
-        day: new Date().setDate(new Date().getDate() - 10),
+        day: moment().substract(10, 'days').toISOString(),
+        dateTime: moment().subtract(10, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -21,7 +23,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 9),
+        day: moment().substract(9, 'days').toISOString(),
+        dateTime: moment().subtract(9, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -34,20 +37,22 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 8),
+        day: moment().substract(8, 'days').toISOString(),
+        dateTime: moment().subtract(8, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
                 name: "Push Press",
                 duration: 25,
-                weight: "185",
+                weight: 185,
                 reps: 8,
                 sets: 4
             }
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 7),
+        day: moment().substract(7, 'days').toISOString(),
+        dateTime: moment().subtract(7, 'days').unix(),
         exercises: [
             {
                 type: "cardio",
@@ -58,7 +63,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 6),
+        day: moment().substract(6, 'days').toISOString(),
+        dateTime: moment().subtract(6, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -84,7 +90,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 4),
+        day: moment().substract(4, 'days').toISOString(),
+        dateTime: moment().subtract(4, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -97,7 +104,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 3),
+        day: moment().substract(3, 'days').toISOString(),
+        dateTime: moment().subtract(3, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -110,7 +118,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 2),
+        day: moment().substract(2, 'days').toISOString(),
+        dateTime: moment().subtract(2, 'days').unix(),
         exercises: [
             {
                 type: "resistance",
@@ -123,7 +132,8 @@ let workoutSeed = [
         ]
     },
     {
-        day: new Date().setDate(new Date().getDate() - 1),
+        day: moment().substract(1, 'days').toISOString(),
+        dateTime: moment().subtract(1, 'days').unix(),
         exercises: [
             {
                 type: "cardio",
@@ -136,12 +146,13 @@ let workoutSeed = [
 ];
 
 db.Workout.deleteMany({})
-    .then(() => db.Workout.collection.insertMany(workoutSeed))
-    .then(data => {
-        console.log(data.result.n + " records inserted!");
-        process.exit(0);
-    })
-    .catch(err => {
-        console.error(err);
-        process.exit(1);
-    });
+  .then(() => db.Workout.insertMany(workoutSeed))
+  .then(data => {
+    // console.log(data.result.n + " records inserted!");
+    console.log(data)
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
