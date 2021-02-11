@@ -436,19 +436,19 @@ form > button {
     }
 }
 
-footer {
+/* footer {
     background-color: #6d8efc;
     height: 70px;
     color: #ffffff;
     line-height: 3;
     font-size: 14px;
-}
+} 
 
 .footer-text {
     text-align: center;
     padding-top: 20px;
     font-weight: 100;
-}
+} */
 
 /*
 .nav-item {
