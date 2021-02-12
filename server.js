@@ -21,6 +21,8 @@ mongoose.connect(
   }
 );
 
+mongoose.connect(MONGODB_URI);
+
 const db = require("./models");
 
 require("./routes/apiRoutes")(app);
