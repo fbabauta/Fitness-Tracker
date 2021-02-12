@@ -9,7 +9,7 @@ const API = {
         try {
             res = await fetch("/api/workouts");
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
         const json = await res.json();
 
@@ -53,4 +53,4 @@ const API = {
 
         return json;
     },
-},
+};
