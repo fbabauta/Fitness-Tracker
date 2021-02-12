@@ -19,17 +19,17 @@ mongoose.connect("mongodb://localhost/workout", {
   });
 
   // get last workout 
-  router.get("/api/workouts", (req, res) => {
-    db.Workout.find({})
-      .sort({ day: -1 })
-      .limit(1)
-      .then(data => {
-        res.json(data);
-      })
-      .catch(err => {
-        res.json(err);
-      });
-  })
+router.get("/api/workouts", (req, res) => {
+  db.Workout.find({})
+    .sort({ day: -1 })
+    .limit(1)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
   // add new workout
 router.post("/api/workouts", (req, res) => {
@@ -40,7 +40,7 @@ router.post("/api/workouts", (req, res) => {
     .catch(err => {
       res.json(err);
     });
-}):
+});
 
 router.put("/api/workouts/:id", (req, res) => {
   db.Workout.findOneAndUpdate(
@@ -51,11 +51,11 @@ router.put("/api/workouts/:id", (req, res) => {
       let duration = data.calcDuration();
       db.Workout.findOneAndUpdate(
         { _id: req.params.id },
-        { $set: { totalDuration: duration } },
+        { $set: { totalDuration: duration } }
       )
-      .then(updated => {
+        .then(updated => {
           res.json(updated);
-      })
+        });
   })
   .catch(err => {
     res.json(err);
