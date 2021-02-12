@@ -25,7 +25,7 @@ async function initExercise() {
 
     // if no workout id exists create a new workout
     if (location.search.split("=")[1] === undefined) {
-        workout = await API.createWorkout()
+        workout = await API.createWorkout();
     }
 
     // if workout exists add workout id to url

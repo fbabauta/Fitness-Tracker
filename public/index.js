@@ -14,7 +14,7 @@ async function init() {
     } else {
 
       // if no previous workout exists remove the continue workout button
-      document.querySelector("#continue-btn").classList.add("d-none")
+      document.querySelector("#continue-btn").classList.add("d-none");
     }
   }
 }
