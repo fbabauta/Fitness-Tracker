@@ -38,7 +38,7 @@ WorkoutSchema.methods.calcDuration = function() {
 
     for (var i = 0; i < this.exercises.length; i++) {
         duration += this.exercises[i].duration;
-    };
+    }
 
     return duration;
 };
