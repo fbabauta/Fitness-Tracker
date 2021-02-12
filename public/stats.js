@@ -1,47 +1,43 @@
-// required in stats.html
-
 // get all workout data from back-end
+
 fetch("/api/workouts/range")
   .then(response => {
     return response.json();
   })
   .then(data => {
-    console.log(data);
     populateChart(data);
   });
 
 
 API.getWorkoutsInRange();
 
-
-// generate color palette
   function generatePalette() {
     const arr = [
-      "#2de0aa",
-      "#5cedc1",
-      "#94f0d4",
-      "#c2f9e8",
-      "#e2fcf4",
-      "#f2fefb",
-      "#e2fcf4",
-      "#c2f9e8",
-      "#94f0d4",
-      "#5cedc1",
-      "#2de0aa",
-      "#5cedc1",
-      "#94f0d4",
+      "#003f5c",
+      "#2f4b7c",
+      "#665191",
+      "#a05195",
+      "#d45087",
+      "#f95d6a",
+      "#ff7c43",
+      "ffa600",
+      "#003f5c",
+      "#2f4b7c",
+      "#665191",
+      "#a05195",
+      "#d45087",
+      "#f95d6a",
+      "#ff7c43",
+      "ffa600"
     ];
 
   return arr;
-}
-
-// populate and render charts
+  }
 function populateChart(data) {
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
-  let resistanceWorkouts = resistanceWorkoutNames(data);
 
   let line = document.querySelector("#canvas").getContext("2d");
   let bar = document.querySelector("#canvas2").getContext("2d");
@@ -63,8 +59,8 @@ function populateChart(data) {
       datasets: [
         {
           label: "Workout Duration In Minutes",
-          backgroundColor: "#12e2a3",
-          borderColor: "#12e2a3",
+          backgroundColor: "red",
+          borderColor: "red",
           data: durations,
           fill: false
         }
@@ -73,20 +69,14 @@ function populateChart(data) {
     options: {
       responsive: true,
       title: {
-        display: false
-      },
-      legend: {
-        display: false,
+        display: true
       },
       scales: {
         xAxes: [
           {
             display: true,
             scaleLabel: {
-              display: true,
-              labelString: "Day of Week",
-              fontFamily: "'Roboto', sans-serif",
-              fontStyle: "lighter"
+              display: true
             }
           }
         ],
@@ -94,10 +84,7 @@ function populateChart(data) {
           {
             display: true,
             scaleLabel: {
-              display: true,
-              labelString: "Minutes of Exercise",
-              fontFamily: "'Roboto', sans-serif",
-              fontStyle: "lighter"
+              display: true
             }
           }
         ]
@@ -122,55 +109,42 @@ function populateChart(data) {
           label: "Pounds",
           data: pounds,
           backgroundColor: [
-            "#2de0aa",
-            "#5cedc1",
-            "#94f0d4",
-            "#c2f9e8",
-            "#e2fcf4",
-            "#f2fefb",
-            "#e2fcf4",
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
           ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
+          borderWidth: 1
         }
       ]
     },
     options: {
       title: {
-        display: false,
+        display: true,
         text: "Pounds Lifted"
       },
-      legend: {
-        display: false,
-      },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "Day of Week",
-              fontFamily: "'Roboto', sans-serfi",
-              fontStyle: "lighter"
-            }
-          }
-        ],
         yAxes: [
           {
             ticks: {
               beginAtZero: true
-            },
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "Weight Lifted (lbs)",
-              fontFamily: "'Roboto', sans-serif",
-              fontStyle: "lighter"
             }
           }
         ]
       }
     }
   });
-      
+
   let pieChart = new Chart(pie, {
     type: "pie",
     data: {
@@ -185,24 +159,16 @@ function populateChart(data) {
     },
     options: {
       title: {
-        display: false,
-        text: "Excercises Performed"
-      },
-      legend: {
         display: true,
-        position: "left",
-        labels: {
-          fontFamily: "'Roboto', sans-serif",
-          fontStyle: "lighter"
-        }
+        text: "Excercises Performed"
       }
     }
   });
-   
+
   let donutChart = new Chart(pie2, {
     type: "doughnut",
     data: {
-      labels: resistanceWorkouts,
+      labels: workouts,
       datasets: [
         {
           label: "Excercises Performed",
@@ -213,25 +179,13 @@ function populateChart(data) {
     },
     options: {
       title: {
-        display: false,
-        text: "Excercises Performed"
-      },
-      legend: {
-        itemStyle: {
-          width: 12
-        },
         display: true,
-        position: "right",
-        labels: {
-          fontFamily: "'Roboto', sans-serif",
-          fontStyle: "lighter"
-        }
+        text: "Excercises Performed"
       }
     }
   });
 }
-   
-// get duration data
+
 function duration(data) {
   let durations = [];
 
@@ -244,22 +198,18 @@ function duration(data) {
   return durations;
 }
 
-// calculate total weight
 function calculateTotalWeight(data) {
   let total = [];
 
   data.forEach(workout => {
     workout.exercises.forEach(exercise => {
-      if (exercise.type === "resistance") {
-        total.push(exercise.weight);
-      }
+      total.push(exercise.weight);
     });
   });
 
   return total;
 }
 
-// get workout names
 function workoutNames(data) {
   let workouts = [];
 
@@ -270,20 +220,4 @@ function workoutNames(data) {
   });
   
   return workouts;
-}
-
-// get resistance workout names
-function resistanceWorkoutNames(data) {
-  let resWorkouts = [];
-
-  data.forEach(workout => {
-    workout.exercises.forEach(exercise => {
-      if (exercise.type === "resistance") {
-        resWorkouts.push(exercise.name);
-      }
-    });
-  });
-
-  console.log(resWorkouts);
-  return resWorkouts;
 }
