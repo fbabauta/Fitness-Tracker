@@ -11,7 +11,7 @@ mongoose.connect(
   }
 
   .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err)
 
 let workoutSeed = [
   {
