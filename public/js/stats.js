@@ -17,23 +17,23 @@ API.getWorkoutsInRange();
 // generate color palette
   function generatePalette() {
     const arr = [
-    "#2de0aa",
-    "#5cedc1",
-    "#94f0d4",
-    "#c2f9e8",
-    "#e2fcf4",
-    "#f2fefb",
-    "#e2fcf4",
-    "#c2f9e8",
-    "#94f0d4",
-    "#5cedc1",
-    "#2de0aa",
-    "#5cedc1",
-    "#94f0d4",
-  ]
+      "#2de0aa",
+      "#5cedc1",
+      "#94f0d4",
+      "#c2f9e8",
+      "#e2fcf4",
+      "#f2fefb",
+      "#e2fcf4",
+      "#c2f9e8",
+      "#94f0d4",
+      "#5cedc1",
+      "#2de0aa",
+      "#5cedc1",
+      "#94f0d4",
+    ];
 
   return arr;
-};
+}
 
 // populate and render charts
 function populateChart(data) {
