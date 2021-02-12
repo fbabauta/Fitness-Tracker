@@ -1,224 +1,290 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body,
 .wrapper {
-    height: 100%;
+  height: 100%;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body, label, input, option {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #1b0d57;
 }
 
 nav {
-    background-color: #5793fd;
-    color: #ffffff;
-    height: 80px;
-    padding: 10px;
-    line-height: 3;
-    font-size: 1.2rem;
+  background-color: #6d8efc;
+  color: #ffffff;
+  line-height: 3;
+  font-size: 14px;
 }
 
-a, 
+footer {
+  background-color: #6d8efc;
+  height: 70px;
+  color: #ffffff;
+  line-height: 3;
+  font-size: 14px;
+}
+
+.footer-text {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 100;
+}
+
+.nav-item {
+  float: right;
+  padding: 4px 10px 4px 10px;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.nav-item:hover {
+  font-weight: 300;
+  color: white !important;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px !important;
+  padding: 2px;
+}
+
+.logo:hover {
+  font-weight: 500;
+  color: white !important;
+}
+
+.clearfix {
+  overflow: auto;
+  padding: 10px;
+}
+
+a,
 a:hover,
 a:active,
 a:visited {
-    text-decoration: none;
-    color: inherit;
-}
-
-header {
-    height: 150px;
-    padding-top: 80px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-header h1 {
-    transform: skewX(-2deg);
+  text-decoration: none;
+  color: inherit;
 }
 
 select {
-    display: block;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    width: 100%;
-    padding: 10px;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
-        linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-    background-repeat: no-repeat, repeat;
-    background-position: right 0.7em top 50%, 0 0;
-    background-size: 0.65em auto, 100%;
+  display: block;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  width: 100%;
+  padding: 10px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 }
 
 select::-ms-expand {
-    display: none;
+  display: none;
 }
 
 select:hover {
-    border-color: #888;
+  border-color: #888;
 }
 
 select:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222;
-    outline: none;
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
 }
 
 select option {
-    font-weight: normal;
-    width: 100%;
+  font-weight: normal;
+  width: 100%;
 }
 
 input {
-    display: block;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    width: 100%;
-    padding: 10px;
-    background: linear-gradient(to bottome, #ffffff 0%, #e5e5e5e5 100%);
+  display: block;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
 
 .wrapper {
-    background-color: #f2f8ff;
-    padding-top: 100px;
+  background-color: #f5f8fd;
+  padding-bottom: 750px;
+  padding-top: 100px;
 }
 
 .card.m-auto,
 .m-auto {
-    margin: 0 auto;
-    width: 500px;
+  margin: 0 auto;
+  width: 500px;
 }
 
 form .workout-type,
 form .cardio-form div,
 form .resistance-form div {
-    display: flex;
-    margin-top: 30px;
+  display: flex;
+  margin-top: 30px;
 }
 
 form label {
-    width: 150px;
-    margin-top: 0.7rem;
+  width: 150px;
+  margin-top: 0.7rem;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: gray;
 }
 
 form > button {
-    float: right;
-    margin-top: 20px;
+  float: right;
+  margin-top: 20px;
 }
 
 form::after {
-    content: " ";
-    display: block;
-    clear: both;
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .d-none {
-    display: none;
+  display: none !important;
 }
 
 .exercise .ui.card {
-    width: 400px;
-    max-width: 600px;
+  width: 400px;
 }
 
 .exercise .buttons {
-    margin-top: 20px;
-    display: flex;
+  margin-top: 20px;
+  display: flex;
 }
 
 .exercise .buttons button {
-    width: 100%;
+  width: 100%;
 }
 
 button {
-    display: block;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    padding: 10px;
-    background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+}
+
+.btm-btn {
+  font-size: 1.1rem !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  padding-top: 30px !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.exercise-btn {
+  font-size: 1.1rem !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  font-family: 'Roboto', sans-serif !important;
+  padding: 20px !important;
+}
+
+.btm-btn:hover {
+  font-weight: 300 !important;
+}
+
+.exercise-btn:hover {
+  font-weight: 500;
 }
 
 #toast {
-    border-radius: 4px;
-    border-width: 1px;
-    font-size: 13px;
-    line-height: 19.5px;
-    margin: 0px 0px 16px;
-    padding: 12px 59.5px 12px 20px;
-    text-align: left;
-    width: 300px;
-    min-height: 80px;
-    position: fixed;
-    top: 10px;
-    right: -320px;
-    opacity: 0;
-    transition: all 0.5s;
+  border-radius: 4px;
+  border-width: 1px;
+  font-size: 13px;
+  line-height: 19.5px;
+  margin: 0px 0px 16px;
+  padding: 12px 59.5px 12px 20px;
+  text-align: left;
+  width: 300px;
+  min-height: 80px;
+  position: fixed;
+  top: 10px;
+  right: -320px;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 #toast.success {
-    opacity: 1;
-    right: 10px;
-    background-color: hsl(94, 40%, 86%);
-    color: hsl(94, 90%, 16%);
-    transition: all 1.2s;
+  opacity: 1;
+  right: 10px;
+  background-color: hsl(94, 40%, 86%);
+  color: hsl(94, 90%, 16%);
+  transition: all 1.2s;
 }
 
 .workout-type,
 form .cardio-form div,
 form .resistance-form div {
-    display: flex;
-    margin-top: 30px;
+  display: flex;
+  margin-top: 30px;
 }
 
 form label {
-    width: 150px;
-    margin-top: 0.7rem;
+  width: 150px;
+  margin-top: 0.7rem;
 }
 
 form > button {
-    float: right;
-    margin-top: 20px;
+  float: right;
+  margin-top: 20px;
 }
 
 form::after {
-    content: " ";
-    display: block;
-    clear: both;
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 button {
-    display: block;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    padding: 10px;
-    background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
 
 #toast {
@@ -247,24 +313,24 @@ button {
 .workout-type,
 form .cardio-form div,
 form .resistance-form div {
-    display: flex;
-    margin-top: 30px;
+  display: flex;
+  margin-top: 30px;
 }
 
 form label {
-    width: 150px;
-    margin-top: 0.7rem;
+  width: 150px;
+  margin-top: 0.7rem;
 }
 
 form > button {
-    float: right;
-    margin-top: 20px;
+  float: right;
+  margin-top: 20px;
 }
 
 form::after {
-    content: " ";
-    display: block;
-    clear: both;
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .d-none {
@@ -344,13 +410,13 @@ form > button {
 }
 
 .d-flex {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .col {
-    flex: 1;
+  flex: 1;
 }
 
 #toast.success {
@@ -359,161 +425,71 @@ form > button {
 }
 
 .prev-workout h3 {
-    font-size: 2rem;
-    width: 100%;
+  font-size: 2rem;
+  width: 100%;
 }
 
 .prev-workout p {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-/* .workout .card {
-  width: 350px;
-} */
-
 .prev-workout button {
-    margin: 10px;
+  margin: 10px;
 }
 
 .new-workout {
-    display: none;
+  display: none;
 }
 
 .mt {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .workout .ui.card {
-    padding-top: 25px;
+  padding-top: 25px;
 }
 
 .prev-workout {
-    text-align: center;
+  text-align: center;
 }
 
 .prev-workout .buttons {
-    display: flex;
-    height: 75px;
-    margin-top: 30px;
+  display: flex;
+  height: 75px;
+  margin-top: 30px;
 }
 
 .buttons .ui.button {
-    margin: 0;
-    width: 50%;
+  margin: 0;
+  width: 50%;
 }
 
 .ui.card h2 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .buttons .ui.button:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .buttons .ui.button:nth-child(2) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .workout-type,
 .cardio-form,
 .resistance-form {
-    padding: 10px;
+  padding: 15px;
 }
-
-@keyframes toast {
-    50% {
-        opacity: 1;
-        right: 10px;
-    }
-    100% {
-        opacity: 0;
-        right: -320px;
-    }
-}
-
-/* footer {
-    background-color: #6d8efc;
-    height: 70px;
-    color: #ffffff;
-    line-height: 3;
-    font-size: 14px;
-} 
-
-.footer-text {
-    text-align: center;
-    padding-top: 20px;
-    font-weight: 100;
-} */
-
-/*
-.nav-item {
-    float: right;
-    padding: 4px 10px 4px 10px;
-    text-transform: uppercase;
-    font-weight: 200;
-}
-
-.nav-item:hover {
-    font-weight: 300;
-    color: white;
-}
-
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    padding: 2px;
-}
-
-.logo:hover {
-    font-weight: 500;
-    color: white;
-}
-
-.clearfix {
-    overflow: auto;
-    padding: 10px;
-}
-
-.form-label {
-    font-size: 12px;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: gray;
-}
-
-.btm-btn {
-    font-size: 1.1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    padding-top: 30px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.exercise-btn {
-    font-size: 1.1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    padding: 20px;
-}
-
-.btm-btn:hover {
-    font-weight: 300;
-}
-
-.exercise-btn:hover {
-    font-weight: 500;
-}
-
 
 .workout-stats {
-    font-size: 14px;
-    padding-bottom: 20px;
+  font-size: 14px;
+  padding-bottom: 20px;
 }
 
 hr {
@@ -527,58 +503,67 @@ hr {
 }
 
 .add-title {
-    text-align: center;
+  text-align: center;
 }
 
 .key-value {
-    line-height: 20px;
-    font-weight: 100;
-    font-size: 12px;
-    color: gray;
+  line-height: 20px;
+  font-weight: 100;
+  font-size: 12px;
+  color: gray;
 }
 
 .map-key {
-    font-weight: 300;
-    text-transform: uppercase;
-    color: rgba(59, 59, 59);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgb(59, 59, 59);
 }
 
 .workout-card {
-    background-color: white;
-    padding-top: 40px;
-    border-radius: 20px;
-    box-shadow: none;
+  background-color: white;
+  padding-top: 40px;
+  border-radius: 20px;
+  box-shadow: none !important;
 }
 
 .purple-btn {
-    background-color: #7695fa;
+  background-color: #7695fa !important;
 }
 
 .purple-btn:hover {
-    background-color: #5179fc;
+  background-color: #5179fc !important;
 }
 
 
 .green-btn {
-    background-color: #29ecb2;
+  background-color: #29ecb2 !important;
 }
 
 .green-btn:hover {
-    background-color: #00ffb3;
+  background-color: #00ffb3 !important;
 }
 
-
+@keyframes toast {
+  50% {
+    opacity: 1;
+    right: 10px;
+  }
+  100% {
+    opacity: 0;
+    right: -320px;
+  }
+}
 
 @media only screen and (max-width: 447px) {
-    h1 {
-        font-size: 28px;
-    }
+  h1 {
+    font-size: 28px !important;
+  }
 
-    h3 {
-        font-size: 20px;
-    }
+  h3 {
+    font-size: 20px !important;
+  }
 
-    .btm-btn {
-        font-size: 11px;
-    }
-}   */
+  .btm-btn {
+    font-size: 11px !important;
+  }
+}
