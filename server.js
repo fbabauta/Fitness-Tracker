@@ -23,6 +23,8 @@ mongoose.connect(
   }
 );
 
+mongoose.connect(MONGODB_URI);
+
 // routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/view.js"));
