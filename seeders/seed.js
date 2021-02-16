@@ -121,8 +121,8 @@ let workoutSeed = [
         sets: 4
       }
     ]
-  },
-];   
+  }
+];
 
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
