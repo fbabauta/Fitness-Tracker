@@ -6,6 +6,8 @@ const PORT = 3000;
 
 const app = express();
 
+const uri = process.env.MONGODB_URI;
+
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
