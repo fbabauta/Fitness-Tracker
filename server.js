@@ -22,8 +22,14 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
-
-mongoose.connect(MONGODB_URI);
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://fbabauta:Fucovid19@cluster0.ramay.mongodb.net/workout?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 // routes
 app.use(require("./routes/api.js"));
