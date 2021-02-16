@@ -1,12 +1,14 @@
 const express = require("express");
-const logger = require("morgan");
+const morgan = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = 3000;
+require("./models");
+
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-app.use(logger("dev"));
+app.use(morgan("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,19 +24,11 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://fbabauta:Fucovid19@cluster0.ramay.mongodb.net/workout?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 
 // routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/view.js"));
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`App running on port ${PORT}`);
 });
