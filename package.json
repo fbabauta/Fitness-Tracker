@@ -1,11 +1,11 @@
 {
-  "name": "fitness-tracker",
+  "name": "mongoose_skeleton",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "npm run seed && node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeders/seed.js"
   },
