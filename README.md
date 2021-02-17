@@ -9,6 +9,7 @@
 #### Fitness Tracker is a full-stack application that allows the user to track and visualize their fitness progress. The user may add to or view their latest workout, or start a new workout where they can enter information about the exercises they completed. Fitness tracker provides the user with a series of charts to view their fitness progress by day, by duration of each exercise, and by pounds lifted. This helps the user vizualize their fitness progress, track their successes, and identify areas for improvement.
 
 
+<br>
 
 ## Table of Contents
 
@@ -19,7 +20,7 @@
 
 
 
-
+<br>
 
 ## Technologies 
 
@@ -35,7 +36,7 @@
 
 
 
-
+<br>
 
 ## Usage
 * #### Navigate to the [deployed Heroku App.](https://fitness-trackapp.herokuapp.com)
@@ -47,12 +48,14 @@
 * #### Once workout is complete the user selects "Complete". Then they are taken back to the home screen where they can view their last workout information.
 
 
-
+<br>
 
 
 ## Finished Product
 
-#### View deployed Heroku app [here.](https://fitness-trackapp.herokuapp.com/) 
+#### View deployed Heroku app [here.](https://fitness-trackapp.herokuapp.com/)
+
+<br>
 
 ![Fitness-Tracker](https://user-images.githubusercontent.com/70370805/108168973-f5798600-70ac-11eb-9bb1-e1358073e9c1.gif)
 
@@ -63,6 +66,9 @@
 
 ## Credits
 #### Huge shoutout to my bootcamp buddy, [Jailanie Kaganovosky](https://github.com/jkaganovsky) for helping me deploy this web app on Heroku. The challenge I tend to face all the time with Heroku is the never-ending 'Heroku logs --tail'. Thank you!
+
+
+<br>
 
 
 ## Questions 
