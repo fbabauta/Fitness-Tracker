@@ -51,12 +51,17 @@
 
 ## Finished Product
 
-View deployed Heroku app [here.](https://fitness-trackapp.herokuapp.com/) 
+#### View deployed Heroku app [here.](https://fitness-trackapp.herokuapp.com/) 
 
 
 
 
 
+
+
+
+## Credits
+#### Huge shoutout to my bootcamp buddy, [Jailanie Kaganovosky](https://github.com/jkaganovsky) for helping me deploy this web app on Heroku. The challenge I tend to face all the time with Heroku is the never-ending 'Heroku logs --tail'. Thank you!
 
 
 ## Questions 
