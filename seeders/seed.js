@@ -2,7 +2,7 @@ let mongoose = require("mongoose");
 let db = require("../models");
 require("dotenv").config();
 
-mongoose.connect(process.env.DATABASE || "mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
