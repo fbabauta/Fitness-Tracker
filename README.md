@@ -28,6 +28,7 @@
 * ##### JavaScript
 * ##### Node.js
 * ##### Express.js
+* ##### Heroku
 * ##### MongoDB
 * ##### Mongoose
 * ##### NPM
@@ -53,7 +54,7 @@
 
 #### View deployed Heroku app [here.](https://fitness-trackapp.herokuapp.com/) 
 
-
+![Fitness-Tracker](https://user-images.githubusercontent.com/70370805/108168973-f5798600-70ac-11eb-9bb1-e1358073e9c1.gif)
 
 
 
